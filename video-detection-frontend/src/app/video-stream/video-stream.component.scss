@@ -1,0 +1,81 @@
+mat-card {
+  margin: 24px auto;
+  max-width: 1100px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 24px 24px 32px 24px;
+  background: #fff;
+}
+
+mat-toolbar {
+  width: calc(100% + 48px);
+  margin-left: -24px;
+  margin-right: -24px;
+  border-radius: 12px 12px 0 0;
+  margin-top: -24px;
+  margin-bottom: 24px;
+}
+
+button[mat-raised-button], button[mat-stroked-button] {
+  margin-right: 8px;
+}
+
+mat-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+mat-list-item {
+  font-size: 15px;
+}
+
+mat-expansion-panel {
+  margin-top: 20px;
+  background: #f7f7f7;
+  border-radius: 8px;
+}
+
+img {
+  background: #eee;
+}
+
+.mat-elevation-z2 {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mat-table {
+  width: 100%;
+  background: #fff;
+}
+
+th.mat-header-cell, td.mat-cell {
+  padding: 8px 12px;
+  font-size: 15px;
+}
+
+th.mat-header-cell {
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+tr.mat-row:nth-child(even) td.mat-cell {
+  background: #fafafa;
+}
+
+mat-icon {
+  vertical-align: middle;
+}
+
+@media (max-width: 900px) {
+  mat-card {
+    max-width: 100vw;
+    padding: 8px;
+  }
+  .mat-table {
+    font-size: 13px;
+  }
+  img {
+    max-width: 98vw;
+  }
+}

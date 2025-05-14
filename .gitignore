@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*env/
+venv/
+.venv/
+env.bak/
+venv.bak/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Output and uploads
+output/
+uploaded_videos/
+
+# Logs
+*.log
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Frontend (Angular)
+video-detection-frontend/node_modules/
+video-detection-frontend/dist/
+video-detection-frontend/.angular/cache/
+video-detection-frontend/browserslist
+video-detection-frontend/.env
+video-detection-frontend/.env.local
+video-detection-frontend/.env.*.local
+video-detection-frontend/npm-debug.log*
+video-detection-frontend/coverage/
+
+# Alembic (if any local non-versioned files, usually not needed beyond __pycache__)
+alembic/__pycache__/
+alembic/versions/__pycache__/ 
