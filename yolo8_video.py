@@ -188,15 +188,15 @@ def process_video(
             # --- Отрисовка информации на кадре ---
             if crosswalk_position: # Отрисовка рамки пешеходного перехода
                 cx, cy, cw, ch = crosswalk_position
-                draw_box(frame, (cx, cy, cw, ch), (255, 0, 0), "Пешеходный переход")
+                draw_box(frame, (cx, cy, cw, ch), (255, 0, 0), "Crosswalk")
             
             # Отрисовка рамок светофоров
             for (lx, ly, lw, lh) in green_lights:
-                draw_box(frame, (lx, ly, lw, lh), (0, 255, 0), "Зеленый")
+                draw_box(frame, (lx, ly, lw, lh), (0, 255, 0), "Green")
             for (lx, ly, lw, lh) in red_lights:
-                draw_box(frame, (lx, ly, lw, lh), (0, 0, 255), "Красный")
+                draw_box(frame, (lx, ly, lw, lh), (0, 0, 255), "Red")
             for (lx, ly, lw, lh) in yellow_lights:
-                draw_box(frame, (lx, ly, lw, lh), (0, 255, 255), "Желтый")
+                draw_box(frame, (lx, ly, lw, lh), (0, 255, 255), "Yellow")
             
             # Отрисовка рамок ТС
             for (vx, vy, vw, vh, vlabel, tid) in vehicle_boxes:
@@ -204,8 +204,8 @@ def process_video(
                 draw_box(frame, (vx, vy, vw, vh), (255, 255, 0), label)
             
             # Отображение счетчиков на кадре
-            cv2.putText(frame, f"Пересекло: {total_cross_count}", (30, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 2)
-            cv2.putText(frame, f"На красный: {red_light_cross_count}", (30, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+            cv2.putText(frame, f"Crossed: {total_cross_count}", (30, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 2)
+            cv2.putText(frame, f"Red crossed: {red_light_cross_count}", (30, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
 
             # --- Подготовка данных для вывода/отправки ---
             frame_data = {
@@ -230,7 +230,7 @@ def process_video(
                 yield frame_data # По умолчанию только метаданные
 
             if show_windows: # Отображение окна OpenCV, если включено
-                cv2.imshow("Текущий кадр", frame)
+                cv2.imshow("Current frame", frame)
                 if cv2.waitKey(1) & 0xFF == ord("q"): # Выход по нажатию 'q'
                     break
             frame_idx += 1 # Инкремент счетчика кадров
